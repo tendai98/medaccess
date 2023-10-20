@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title id="title_text">MedAccess</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/style.css">
+  
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+        <script src="js/index.js"></script>
+      </head>
+
+    <body style="background-color: #545556">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">MedAccess</a>
+            <a class="navbar-brand" href="#" id="header_text"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <button type="button" class="btn btn-outline-warning" id="tlv_status" onclick="tlvCheck()">Check TLV Alerts</button>
+              <ul class="navbar-nav mr-auto">
+                
+                <div class="btn-group">
+                  <button type="button" class="btn btn-primary btn-outline-primary" style="margin-left: 30px;">OPD Reports</button>
+                  <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  
+                  <div id="opd_list" class="dropdown-menu">
+                  </div>
+                </div>
+
+                <div class="btn-group">
+                  <button type="button" class="btn btn-primary btn-outline-primary" style="margin-left: 30px;">STI Reports</button>
+                  <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  
+                  <div id="sti_list" class="dropdown-menu">
+                  </div>
+                </div>
+                
+              </ul>
+
+              <form class="form-inline my-2 my-lg-0">
+                <button onclick="deauth()" class="btn btn-danger btn btn-outline-danger my-2 my-sm-0" type="button">Logout</button>
+              </form>
+            </div>
+
+          </nav>
+          
+    </body>
+
+    <div class="dropdown-divider"></div>
+    <h2 id="opd_main_header" style="color: #429ee0;"><b>All Accumulated Data</b></h2>
+    <div class="dropdown-divider"></div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <div class="card" style="width: 70rem;">
+            <canvas id="chart1" width="800" height="400"></canvas>
+            <div class="card-body">
+              <h5 class="card-title" id="chart1_title">Chart 1</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dropdown-divider"></div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <div class="card" style="width: 70rem;">
+            <canvas id="chart2" width="800" height="400"></canvas>
+            <div class="card-body">
+              <h5 class="card-title" id="chart2_title">Chart 2</h5>
+            </div>
+          </div>
+       </div>
+      </div>
+    </div>
+
+    <div class="dropdown-divider"></div>
+    <h2 id="sti_main_header" style="color: #429ee0;"><b>All Accumulated Data</b></h2>
+    <div class="dropdown-divider"></div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <div class="card" style="width: 70rem;">
+            <canvas id="chart3" width="800" height="400"></canvas>
+            <div class="card-body">
+              <h5 class="card-title" id="chart3_title">Chart 3</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dropdown-divider"></div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <div class="card" style="width: 70rem;">
+            <canvas id="chart4" width="800" height="400"></canvas>
+            <div class="card-body">
+              <h5 class="card-title" id="chart4_title">Chart 4</h5>
+            </div>
+          </div>
+       </div>
+      </div>
+    </div>
+
+    <div class="dropdown-divider"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/chart.js"></script>
+    <script src="js/auth.js"></script>
+
+</html>

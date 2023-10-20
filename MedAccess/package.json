@@ -1,0 +1,20 @@
+{
+  "name": "medaccess",
+  "version": "1.0.0",
+  "description": "Medial Information System",
+  "main": "node app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express.js": "^1.0.0",
+    "firebase-admin": "^9.6.0",
+    "nodemailer": "6.5.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+  },
+  "keywords": [
+    "medaccess"
+  ],
+  "author": "Tendai",
+  "license": "ISC"
+}

@@ -1,0 +1,8 @@
+{
+	"port": 5000,
+	"tokenLifeSpan": 3600,
+	"hashAlgorithm": "sha256",
+	"staticFilesPath": "public",
+	"email": "EMAIL_ID",
+	"password": "EMAIL_PASS"
+}

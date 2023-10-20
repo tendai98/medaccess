@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Select Input</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body style="background-image: url('img/bg2.jpeg'); background-repeat: no-repeat; background-size: cover;">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">MedAccess</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">  
+          </ul>
+    
+          <form class="form-inline my-2 my-lg-0">
+            <button onclick="deauth()" class="btn btn-danger btn btn-outline-danger my-2 my-sm-0" type="button">Logout</button>
+          </form>
+        </div>
+      </nav>
+
+    <div class="registration-form">
+        <form>
+            <h2 style="margin: 15px"><b>MedAccess System Options</b></h2>
+            <div class="form-icon">
+                <span><img height="65" width="65" src="https://cdn4.iconfinder.com/data/icons/seo-web-3-1/128/Vigor_Analysis-Data-Analytics-512.png" alt=""></span>
+            </div>
+            <div class="form-group">
+                <button type="button" onclick="openPage('entry', 'data')" class="btn btn-block create-account">OPD Diseases Data Entry</button>
+            </div>
+
+            <div class="form-group">
+                <button type="button" onclick="openPage('sti', 'data')" class="btn btn-block create-account">STI Diseases Data Entry</button>
+            </div>
+
+            <div class="form-group">
+                <button type="button" onclick="openPage('drugs', 'data')" class="btn btn-block create-account">Drug Availability</button>
+            </div>
+
+        </form>
+        
+        <div class="social-media">
+        </div>
+
+    </div>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/auth.js"></script>
+    
+</body>
+</html>
