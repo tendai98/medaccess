@@ -41,7 +41,7 @@ The MedAccess Project is organized into several components:
 - `authUser(args, respJSON, res)`: Authenticate regular users.
 - `authAdminUser(args, res)`: Authenticate admin-level users.
 - `getTimestamp()`: Get the current timestamp.
-- `api(req, res)`: Main function for the Express.js API.
+- `api(req, res)`: Main function for the MedAccess API.
 - `cli(req, res)`: Main function for CLI interactions.
 - `boot()`: Start the Express.js server.
 
